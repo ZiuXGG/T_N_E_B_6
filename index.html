@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+    <title>| PELIXPRESS |</title>
+    <style>
+        
+        body::-webkit-scrollbar {
+          width: 12px;
+        }
+
+        body::-webkit-scrollbar-track {
+          background-color: #141414;
+        }
+
+        body::-webkit-scrollbar-thumb {
+          background-color: #c2db06;
+          border-radius: 6px;
+        }
+    
+        body::-webkit-scrollbar-thumb:hover {
+          background-color: #555;
+        }
+
+        a {
+      text-decoration: none;
+    }
+
+    :root {
+    --rojo: #c2db06;
+    --fondo: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    padding: 30px 0;
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logotipo {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: var(--rojo);
+    font-size: 40px;
+}
+
+header nav a {
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.activo {
+    color: #FFF;
+}
+
+/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
+.pelicula-principal {
+    font-size: 16px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(Img/1.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+
+.pelicula-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 3.25em;
+}
+
+.pelicula-principal .boton {
+    background: rgba(0,0,0, 0.5);
+    border: none;
+    border-radius: 0.32em;
+    padding: 0.93em 3.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    font-size: 1.12em;
+}
+
+.pelicula-principal .boton:hover {
+    background: #c2db06;
+    color: #000;
+}
+
+.pelicula-principal .boton i {
+    margin-right: 1.25em;
+}
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.contenedor-titulo-controles h3 {
+    color: #fff;
+    font-size: 30px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+    background: #fff;
+    height: 3px;
+    width: 50px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+    background: red;
+}
+
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.peliculas-recomendadas {
+    margin-bottom: 70px;
+}
+
+.peliculas-recomendadas .contenedor-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+    position: absolute;
+    border: floralwhite;
+    background: rgba(0, 0, 0, 0);
+    font-size: 40px;
+    height: 20%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 500;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+    background: rgba(0, 0, 0, 0);
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+    left: 0;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+    right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.peliculas-recomendadas .contenedor-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
+    min-width: 20%;
+    transition: 0.3s ease all;
+    box-shadow: 50px 5px 10px rgba(0,0,0, .3);
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+    header .logotipo {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pelicula-principal {
+        font-size: 14px;
+    }
+
+    .pelicula-principal .descripcion {
+        max-width: 100%;
+    }
+
+    .peliculas-recomendadas .contenedor-carousel {
+        overflow: visible;
+    }
+
+    .peliculas-recomendadas .contenedor-carousel .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .peliculas-recomendadas .indicadores,
+    .peliculas-recomendadas .flecha-izquierda,
+    .peliculas-recomendadas .flecha-derecha {
+        display: none;
+    }
+}
+      </style>
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <h2 class="logotipo">PELIXPRESS</h2>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Programs</a>
+                <a href="#">Films</a>
+                <a href="#">More recent</a>
+                <a href="#">My list</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="pelicula-principal">
+            <div class="contenedor">
+                <h3 class="titulo">Puss in boots: The last wish</h3>
+                <p class="descripcion">
+                Puss in Boots discovers that his passion for adventure has taken its toll: it has consumed eight of his nine lives, so he embarks on an epic journey to find the mythical Last Wish and restore his nine lives.
+                </p>
+                <a href="https://ziuxgg.github.io/T_N_E_B_6/Video/base.html" <button role="button" class="boton">
+                    <i class="fas fa-play"></i>Play</button>
+                    </a>
+                <a href="https://ziuxgg.github.io/T_N_E_B/Mas informacion/principal.html" <button role="button" class="boton">
+                    <i class="fas fa-info-circle"></i>More information</button>
+                    </a>
+            </div>
+        </div>
+
+        <div class="peliculas-recomendadas contenedor">
+            <div class="contenedor-titulo-controles">
+                <h3>Recomended films</h3>
+                <div class="indicadores"></div>
+            </div>
+
+            <div class="contenedor-principal">
+                <div class="contenedor-carousel">
+                    <div class="carousel">
+                        <div class="pelicula">
+                            <a href="https://ziuxgg.github.io/T_N_E_B_5/"><img src="Img/2.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="https://ziuxgg.github.io/T_N_E_B_4/"><img src="Img/3.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="https://ziuxgg.github.io/T_N_E_B_3/"><img src="Img/4.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="https://ziuxgg.github.io/T_N_E_B_2/"><img src="Img/5.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="https://ziuxgg.github.io/T_N_E_B_1/"><img src="Img/6.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://kit.fontawesome.com/ddd0b219f6.js" crossorigin="anonymous"></script>
+    <script>
+        const fila = document.querySelector('.contenedor-carousel');
+const peliculas = document.querySelectorAll('.pelicula');
+
+const flechaIzquierda = document.getElementById('flecha-izquierda');
+const flechaDerecha = document.getElementById('flecha-derecha0');
+
+// ? ----- ----- Event Listener para la flecha derecha. ----- -----
+flechaDerecha.addEventListener('click', () => {
+    fila.scrollLeft += fila.offsetWidth;
+
+    const indicadorActivo = document.querySelector('.indicadores .activo');
+    if(indicadorActivo.nextSibling){
+        indicadorActivo.nextSibling.classList.add('activo');
+        indicadorActivo.classList.remove('activo');
+    }
+});
+
+// ? ----- ----- Event Listener para la flecha izquierda. ----- -----
+flechaIzquierda.addEventListener('click', () => {
+    fila.scrollLeft -= fila.offsetWidth;
+
+    const indicadorActivo = document.querySelector('.indicadores .activo');
+    if(indicadorActivo.previousSibling){
+        indicadorActivo.previousSibling.classList.add('activo');
+        indicadorActivo.classList.remove('activo');
+    }
+});
+
+// ? ----- ----- Paginacion ----- -----
+const numeroPaginas = Math.ceil(peliculas.length / 5);
+for(let i = 0; i < numeroPaginas; i++){
+    const indicador = document.createElement('button');
+
+    if(i === 0){
+        indicador.classList.add('activo');
+    }
+
+    document.querySelector('.indicadores').appendChild(indicador);
+    indicador.addEventListener('click', (e) => {
+        fila.scrollLeft = i * fila.offsetWidth;
+
+        document.querySelector('.indicadores .activo').classList.remove('activo');
+        e.target.classList.add('activo');
+    });
+}
+
+// ? ----- ----- Hover ----- -----
+peliculas.forEach((pelicula) => {
+    pelicula.addEventListener('mouseenter', (e) => {
+        const elemento = e.currentTarget;
+        setTimeout(() => {
+            peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
+            elemento.classList.add('hover');
+        }, 300);
+    });
+});
+
+fila.addEventListener('mouseleave', () => {
+    peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
+});
+    </script>
+</body>
+</html>
